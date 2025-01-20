@@ -1,0 +1,159 @@
+<div class="form-container">
+  <form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+    <!-- Personal Information -->
+    <h2>Personal Information</h2>
+    <div class="group">
+      <div class="form-group">
+        <label>Name:</label>
+        <input formControlName="name" type="text" placeholder="Your Full Name" required />
+      </div>
+      <div class="form-group">
+        <label>Location:</label>
+        <input formControlName="location" type="text" placeholder="Your Location" required />
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input formControlName="email" type="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <label>Phone:</label>
+        <input formControlName="phone" type="tel" placeholder="Your Phone Number" required />
+      </div>
+      <div class="form-group">
+        <label>LinkedIn:</label>
+        <input formControlName="linkedIn" type="text" placeholder="Your LinkedIn Profile" required />
+      </div>
+      <div class="form-group">
+        <label>GitHub:</label>
+        <input formControlName="github" type="text" placeholder="Your GitHub Profile" required />
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Career Objective -->
+    <h2>Career Objective</h2>
+      <div class="group">
+      <textarea formControlName="careerObjective" placeholder="Your Career Objective"></textarea>
+    </div>
+
+    <hr>
+
+    <!-- Education -->
+    <div class="headings" >
+      <h2>Education</h2>
+      <button type="button" (click)="addEducation()"> + </button>
+    </div>
+
+    <div formArrayName="education" class="group">
+      <div *ngFor="let edu of education.controls; let i = index" [formGroupName]="i" class="dynamic-section">
+        <input formControlName="degree" type="text" placeholder="Degree (e.g., B.Tech)" required />
+        <input formControlName="college" type="text" placeholder="College/School Name" required />
+        <input formControlName="year" type="text" placeholder="Year (e.g., 2021-2025)" required />
+        <input formControlName="gpa" type="text" placeholder="GPA/Percentage" />
+        <button type="button" (click)="removeEducation(i)">Remove</button>
+      </div>
+    </div>
+
+    <hr>
+
+
+    <!-- Experience -->
+    <div class="headings">
+      <h2>Experience</h2>
+      <button type="button" (click)="addExperience()"> + </button>
+    </div>
+
+    <div formArrayName="experience" class="group">
+      <div *ngFor="let exp of experience.controls; let i = index" [formGroupName]="i" class="dynamic-section">
+        <input formControlName="role" type="text" placeholder="Role (e.g., Intern)" required />
+        <input formControlName="company" type="text" placeholder="Company Name" required />
+        <input formControlName="duration" type="text" placeholder="Duration (e.g., June 2024 - Aug 2024)" required />
+        <textarea formControlName="details" placeholder="Details of work done"></textarea>
+        <button type="button" (click)="removeExperience(i)">Remove</button>
+      </div>
+    </div>
+
+    <hr>
+    
+    <!-- Projects -->
+    <div class="headings">    
+      <h2>Projects</h2>
+      <button type="button" (click)="addProject()"> + </button>
+    </div>
+    <div formArrayName="projects" class="group">
+      <div *ngFor="let proj of projects.controls; let i = index" [formGroupName]="i" class="dynamic-section">
+        <input formControlName="title" type="text" placeholder="Project Title" required />
+        <textarea formControlName="description" placeholder="Description"></textarea>
+        <input formControlName="tools" type="text" placeholder="Tools Used (comma separated)" />
+        <input formControlName="link" type="text" placeholder="Project Link" />
+        <button type="button" (click)="removeProject(i)">Remove</button>
+      </div>
+    </div>
+
+    <hr>
+    
+    <!-- Skills -->
+    <h2>Skills</h2>
+    <div formArrayName="skills" class="group">
+        <h3>Languages</h3>
+        <input formControlName="languages" type="text" placeholder="Languages (comma separated)" />
+        <h3>Frameworks</h3>
+        <input formControlName="frameworks" type="text" placeholder="Frameworks (comma separated)" />
+        <h3>Tools</h3>
+        <input formControlName="tools" type="text" placeholder="Tools (comma separated)" />
+    </div>
+
+    <hr>
+    <br><br>
+
+    <button type="submit">Generate Resume</button>
+  </form>
+</div>
+
+    <!-- Resume Preview -->
+    <!-- <div class="resume-preview" id="resume-preview" *ngIf="resumeData">
+      <h1>{{ resumeData.name }}</h1>
+      <p>Email: {{ resumeData.email }}</p>
+      <p>Phone: {{ resumeData.phone }}</p>
+  
+      <h2>Education</h2>
+      <ul>
+        <li *ngFor="let edu of resumeData.education">
+          <strong>{{ edu.degree }}</strong> - {{ edu.college }} ({{ edu.year }})  
+          <span *ngIf="edu.gpa">GPA: {{ edu.gpa }}</span>
+        </li>
+      </ul>
+  
+      <h2>Experience</h2>
+      <ul>
+        <li *ngFor="let exp of resumeData.experience">
+          <strong>{{ exp.role }}</strong> at {{ exp.company }}  
+          ({{ exp.duration }})  
+          <p>{{ exp.details }}</p>
+        </li>
+      </ul>
+  
+      <h2>Projects</h2>
+      <ul>
+        <li *ngFor="let proj of resumeData.projects">
+          <strong>{{ proj.title }}</strong>  
+          <p>{{ proj.description }}</p>
+          <p><em>Tools: {{ proj.tools }}</em></p>
+        </li>
+      </ul>
+      <h2>Skills</h2>
+      <ul>
+        <li *ngFor="let skill of resumeData.skills">
+          <h3>Languages</h3>
+          <p>{{ skill.languages }}</p>
+          <h3>Frameworks</h3>
+          <p>{{ skill.frameworks }}</p>
+          <h3>Tools</h3>
+          <p>{{ skill.tools }}</p>
+        </li>
+      </ul>
+    </div>
+    <button *ngIf="resumeData" (click)="downloadPDF()">Download PDF</button> -->
+
+

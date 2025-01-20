@@ -1,0 +1,124 @@
+.form-container {
+  max-width: 70%;
+  margin: auto;
+  padding: 20px;
+  min-width: 400px;
+}
+
+h2 {
+  margin-top: 20px;
+  color: #ff6400;
+}
+
+.form-group, .dynamic-section {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea, button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:active {
+  border: 1px solid #ff6400;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  width: auto;
+  background-color: #ffffffd1;
+  color: #ff6400;
+  font-size: 1rem;
+  border: #ff5e00 solid 2px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ff6400;
+}
+
+button[type="submit"] {
+  color: #000;
+  font-weight: 800;
+  font-size: large;
+  padding: 20px;
+}
+button[type="submit"]:hover {
+  background-color: #ff6400;
+}
+
+.group {
+  padding-left: 10px;
+  margin-bottom: 50px;
+}
+
+.headings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+hr {
+  margin-bottom: 50px;
+}
+
+
+
+
+
+/*
+.resume-preview {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.resume-preview h1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.resume-preview h2 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.resume-preview ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resume-preview li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.resume-preview strong {
+  color: #333;
+}
+
+.resume-preview em {
+  font-style: italic;
+  color: #666;
+}
+*/

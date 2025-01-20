@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#">Resume Generator</a>
+    </div>
+    <div class="navbar-menu" [class.is-active]="isActive" (mouseleave)="closeMenu()" >
+      <a routerLink="/" routerLinkActive="activeLink" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="create" routerLinkActive="activeLink">Create</a>
+      <a routerLink="preview" routerLinkActive="activeLink">Preview</a>
+    </div>
+    <button class="navbar-burger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  

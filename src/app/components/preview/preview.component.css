@@ -1,0 +1,147 @@
+.resume-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0056b3;
+  }
+  
+  .header p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .header p span {
+    color: #0066ff;
+    margin-right: 10px;
+  }
+  
+  .header a {
+    color: #0066ff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .header a:hover {
+    text-decoration: underline;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h2 {
+    font-size: 20px;
+    color: #0056b3;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+  }
+  
+  .section h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+  }
+  
+  .objective-entry,
+  .education-entry,
+  .experience-entry,
+  .project-entry,
+  .skills-entry {
+    margin-bottom: 15px;
+    padding-left: 10px;
+  }
+  
+  .section p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .education-duration {
+    font-size: 14px;
+    color: #666;
+    }
+  
+  .project-entry a {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  
+  .project-entry a:hover {
+    text-decoration: underline;
+  }
+  
+  .skills-entry p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .experience-duration {
+    font-size: 14px;
+    color: #666;
+  }
+
+  button {
+    display: block; /* Makes the button take full width for centering */
+    margin: 20px auto; /* Centers horizontally and adds top/bottom spacing */
+    background-color: #007bff; /* Primary blue color */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px; /* Adds comfortable spacing */
+    font-size: 16px; /* Readable text size */
+    font-weight: bold; /* Makes the text stand out */
+    border-radius: 5px; /* Rounded corners for a sleek look */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  button:active {
+    background-color: #003f7f; /* Even darker blue when clicked */
+    transform: scale(0.98); /* Slight press effect */
+  }
+  
+  button:focus {
+    outline: 2px solid #0056b3; /* Focus outline for accessibility */
+    outline-offset: 2px;
+  }
+  
+  @media print {
+    .resume-container {
+      border: none;
+      margin: 0;
+      padding: 40px;
+    }
+  }
+  

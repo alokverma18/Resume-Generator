@@ -1,0 +1,104 @@
+/* General Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fefefe; /* Blue background color */
+    padding: 1rem 1rem;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  }
+  
+  .navbar-brand a {
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 25px;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navbar-menu a {
+    color: black;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  }
+  
+  .navbar-menu a:hover {
+    background-color: #ff6400; /* Darker background on hover */
+    color: white;
+  }
+  
+  /* Burger menu styles */
+  .navbar-burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+  }
+  
+  .navbar-burger span {
+    background-color: black;
+    height: 2px;
+    margin: 4px 0;
+    width: 30px;
+    transition: background-color 0.2s; /* Smooth transition */
+  }
+  
+  .navbar-burger:hover span {
+    background-color: #ff6400; /* Darker color on hover */
+  }
+
+  .navbar-menu .activeLink {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+  
+  /* Media Query for Small Screens */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      right: 0px;
+      background-color: #fefefe;
+      width: 25%;
+      z-index: 1;
+      border-left: #dddbdb 0.1px solid;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+    }
+  
+    .navbar-menu.is-active {
+      display: flex;
+    }
+  
+    .navbar-burger {
+      display: flex;
+    }
+  
+    .navbar-menu a {
+      padding: 1rem;
+      border-bottom: 1px solid #dddbdb;
+      border-radius: 0;
+    }
+
+    .navbar-menu a:hover {
+      background-color: #e3440a;
+    }
+    
+
+    .navbar-menu a:last-child {
+      border-bottom-left-radius: 20px;
+    }
+  }
+  
