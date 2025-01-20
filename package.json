@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "@ng-icons/bootstrap-icons": "^30.2.0",
+    "@ng-icons/core": "^27.5.2",
     "bootstrap-icons": "^1.11.3",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",

@@ -2,11 +2,11 @@
     <header class="header">
       <h1>{{ resumeData.name }}</h1>
       <p>
-        <span>{{ resumeData.location }}</span> 
-        <a href="mailto:{{resumeData.email}}">{{ resumeData.email }}</a>
-        <span>{{ resumeData.phone }}</span>  
-        <a href="https://linkedin.com/in/{{ resumeData.linkedIn }}">{{resumeData.linkedIn}}</a>
-        <a href="https://github.com/{{ resumeData.github }}">{{resumeData.github}}</a>
+        <ng-icon [svg]="locationIcon" /><span> {{ resumeData.location }}</span> 
+        <ng-icon [svg]="emailIcon" /> <a href="mailto:{{resumeData.email}}">{{ resumeData.email }}</a>
+        <ng-icon [svg]="phoneIcon" /> <span>{{ resumeData.phone }}</span>  
+        <ng-icon [svg]="linkedinIcon" /> <a href="https://linkedin.com/in/{{ resumeData.linkedIn }}">{{resumeData.linkedIn}}</a>
+        <ng-icon [svg]="githubIcon" /> <a href="https://github.com/{{ resumeData.github }}">{{resumeData.github}}</a>
       </p>
     </header>
   
@@ -51,9 +51,9 @@
     <section class="section">
       <h2>Skills</h2>
       <div class="skills-entry">
-        <p><strong>Languages:</strong> {{ resumeData.skills.languages }}</p>
-        <p><strong>Frameworks:</strong> {{ resumeData.skills.frameworks }}</p>
-        <p><strong>Tools:</strong> {{ resumeData.skills.tools }}</p>
+        <p><strong>Languages:</strong> {{ resumeData.skills?.languages }}</p>
+        <p><strong>Frameworks:</strong> {{ resumeData.skills?.frameworks }}</p>
+        <p><strong>Tools:</strong> {{ resumeData.skills?.tools }}</p>
       </div>
     </section>
   </div>

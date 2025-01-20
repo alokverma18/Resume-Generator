@@ -130,6 +130,7 @@ export class FormComponent {
   onSubmit(): void {
     if (this.resumeForm.valid) {
       this.resumeData = this.resumeForm.value;
+      console.log(this.resumeData);
       this.dataService.updateResumeData(this.resumeData);
       this.router.navigate(['preview']);
     } else {

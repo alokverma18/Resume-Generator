@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { bootstrapGithub, bootstrapLinkedin, bootstrapEnvelopeAtFill, bootstrapTelephoneFill, bootstrapGeoAltFill } from '@ng-icons/bootstrap-icons';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { DataService } from '../data.service';
@@ -7,50 +9,20 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-preview',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgIcon],
   templateUrl: './preview.component.html',
-  styleUrl: './preview.component.css'
+  styleUrl: './preview.component.css',
+  providers: [provideIcons({ bootstrapGithub, bootstrapLinkedin, bootstrapEnvelopeAtFill, bootstrapTelephoneFill, bootstrapGeoAltFill })],
 })
 export class PreviewComponent {
 
-  resumeData: any = {
-    "name": "Alok Kumar Verma",
-    "location": "Chennai",
-    "email": "as1492@srmist.edu.in",
-    "phone": "08707685353",
-    "linkedIn": "alokverma18",
-    "github": "alokverma18",
-    "careerObjective": "this.resumeData",
-    "education": [
-        {
-            "degree": "B.Tech",
-            "college": "SRMIST",
-            "year": "2021-25",
-            "gpa": "9.78"
-        }
-    ],
-    "experience": [
-        {
-            "role": "Intern",
-            "company": "BNY",
-            "duration": "June 2024- August 2024",
-            "details": "this.resumeData"
-        }
-    ],
-    "projects": [
-        {
-            "title": "SmartGrid",
-            "description": "this.resumeData",
-            "tools": "Angular, Python, HTML",
-            "link": "this.resumeData"
-        }
-    ],
-    "skills": {
-        "languages": "Angular, Python, HTML",
-        "frameworks": "Angular, Python, HTML",
-        "tools": "Angular, Python, HTML"
-    }
-};
+  resumeData: any = null;
+  githubIcon = bootstrapGithub;
+  linkedinIcon = bootstrapLinkedin;
+  emailIcon = bootstrapEnvelopeAtFill;
+  phoneIcon = bootstrapTelephoneFill;
+  locationIcon = bootstrapGeoAltFill
+  
 
   constructor(
     private dataService: DataService
@@ -58,12 +30,15 @@ export class PreviewComponent {
 
   ngOnInit(): void {
     this.dataService.resumeData$.subscribe((data) => {
-      if(data.length > 0) {
+      if(data) {
         this.resumeData = data;
-        console.log(this.resumeData)
+        // console.log(this.resumeData)
+      } else {
+        console.log('No data found');
       }
     });
   }
+  
 
   downloadPDF(): void {
     const content = document.getElementById('resume-preview');

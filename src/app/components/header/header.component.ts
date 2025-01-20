@@ -13,6 +13,7 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isActive = !this.isActive;
+    console.log(this.isActive);
   }
 
   closeMenu() {
